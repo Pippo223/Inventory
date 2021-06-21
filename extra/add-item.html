@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <div id = "top">
+        <div class="top">
+            Admin
+        </div>
+        <div class="top"><i class="fa">&#xf0c9;</i></div>
+        <div class="top"><i class="fa fa-dashboard"></i> Dashboard</div>
+        <div class="top">
+            <div> Inventory Management System</div>
+            <div class="top-right">Home > Dashboard > Add Item</div>
+        </div>
+        <div class="top">
+            <ul>
+                <li><a href=""><i class="fa fa-plus-square"></i> Add Item</a></li>
+                <li><a href="extra/view.html"><i class="fa fa-plus-square"></i> View Items</a></li>
+                <li><a href=""><i class='fa fa-toggle-up'></i> Update Quantity</a></li>
+                <li><a href=""><i class="fa fa-edit"></i> Update Details</a></li>
+                <li><a href=""><i class="fa fa-minus-square"></i> Remove Item</a></li>
+                <li><a href=""><i class="fa fa-user-plus"></i> Add User</a></li>
+                <li><a href=""><i class="fa fa-user-times"></i> Remove User</a></li>
+            </ul>
+        </div>
+        <div class="top" id="boxes">
+            <div class="form">
+                <form action="">
+                    <h2>Add Item Form</h2>
+                    <i>All fields are required</i>
+                    <input type="text" name="name" id="item-name" placeholder="Enter item name">
+                    <br>
+                    <textarea name="desc" id="text-area" cols="30" rows="5" 
+                    placeholder = "Briefly describe item" required></textarea>
+                    <br>
+                    <select name="category" id="cat">
+                        <option value="0">Category</option>
+                        <option value="1">Adidas</option>
+                        <option value="2">Nike</option>
+                        <option value="3">Puma</option>
+                        <option value="4">Others</option>
+                    </select>
+                    <br>
+                    <input type="number" placeholder= "Enter Available Quantity">
+                    <br>
+                    <input type="number" placeholder= "Enter price($)" required>
+                    <br>
+                    <input type="file" id = "img" name = "img" accept="image/*">
+                    <br>
+                    <button class="btns" id="add-btn">Add Item</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
