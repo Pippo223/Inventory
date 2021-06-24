@@ -1,3 +1,4 @@
+/*General*/
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
@@ -59,11 +60,23 @@ body {
 }
 
 #boxes {
-    background-color:honeydew;
+    /* background-color:honeydew; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:0 1.5em;
     margin-left: 0.5em;
+    border:1px solid green;
+    /* position: relative; */
+}
+
+
+#preview-pane {
+    border:1px solid red;
+    height: 60vh;
+    position: absolute;
+    top:30%;
+    left:65%;
+    width: 30%;
 }
 
 ul, li {
@@ -73,12 +86,12 @@ ul, li {
     font-size: 1.2rem;
 }
 
-li a {
+a {
     color: inherit;
     text-decoration: none;
 }
 
-li a:hover {
+a:hover {
     color:orange
 }
 
@@ -135,6 +148,12 @@ li a:hover {
     
 }
 
+/*Add Item*/
+h2 {
+    background-color: gold;
+    margin-block-end: 0;
+}
+
 .form {
     background-color: cornflowerblue;
     width: 100%;
@@ -172,6 +191,7 @@ button.btns {
     font-weight: 600;
     background-color: #cdcdcd;
     margin: auto;
+    border-radius: 0.2rem;
 }
 
 button.btns:hover {
@@ -180,74 +200,63 @@ button.btns:hover {
     font-size: 1.2rem;
 }
 
-.qty-main {
+/*View*/
+input[class=search] {
+    width:35%;
+    margin: auto;
+    margin-left: 25%;
+    margin-right: 0.5rem;
+    border: 1px solid #cdcdcd; 
+    border-radius: 1em;
+    margin-top: 2rem;
+    padding-left: 00.5rem;
+}
+
+img {
+    width:50%;
+}
+
+table {
     width: 100%;
-    
-    margin-left: 5rem;
-    background-color:thistle;
-    height: 70vh;
-    border-radius: 0.5rem 0.5rem 0 0;
+    margin-top: 2em;
 }
 
-.qty-main > p {
-    padding-left: 0.5rem;
-}
-
-h2 {
-    margin-block-end: 0;
-    background-color: gold;
-    color: navy;
+td, th {
+    width:20vw;
     text-align: center;
+    border-right: 2px solid #cdcdcd;
+    border-bottom: 2px solid #cdcdcd;
 }
 
-span.writings {
+th {
+    border-top:5px solid #cdcdcd;
+}
+
+td:nth-child(even) {
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-button#qty-btn {
-    margin-left: 5rem;
-    background-color:rgb(252, 214, 145);
+td:nth-child(3){
+    font-size: 0.9rem;
 }
 
-button#qty-btn:hover {
-    background-color:gold;
-    color: navy;
-    font-size: 1.2rem;
-}
-
-.items {
-    width: 80%;
-    margin-left: 1em;
-    display: flex;
-    margin-top: 1em;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    border-radius: 10px;
-}
-
-.detail {
-    margin-left: 1.5rem;
-}
-
-.items img {
-    width: 15%;
-}
-
-.detail {
-    margin-top: 1em;
-}
-
-.detail p {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-bottom: 0.5em;
-}
-
-.detail p:first-child {
+td:nth-child(5){
     font-size: 1.5rem;
-    margin-bottom: 0;
+    font-weight: 700;
+    color:green;
 }
 
-.detail p:nth-of-type(odd) {
+td:nth-child(7){
+    font-size:3rem;
     font-weight: 600;
+    color:red;
+    padding-bottom: 2.5rem;
+    border-bottom:none; 
+    /* visibility:hidden;  */
 }
+
+.fa.fa-trash-o:hover .fa.fa-edit:hover {
+    cursor: pointer;
+}
+
