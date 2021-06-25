@@ -260,3 +260,35 @@ td:nth-child(7){
     cursor: pointer;
 }
 
+.edit-msg {
+    font-size: 0.8rem;
+    color:midnightblue;
+}
+
+.top-of-table {
+    display:flex;
+}
+
+button[id = update-ls] {
+    color:midnightblue;
+    background-color:#cdcdcd;
+     padding: 0.8rem; 
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    visibility: hidden;
+}
+
+button[id = update-ls]:hover{
+    background-color: orange;
+
+}
+
+.srch {
+    width:80%;
+    margin:auto;
+}
+
