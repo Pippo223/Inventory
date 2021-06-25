@@ -14,6 +14,14 @@ let productArray = []
     }
  }
 
+if (productArray.length == 0 && localStorage.length == 0)
+{
+  document.getElementById('nothing').style.display = "block"
+}
+else {
+  document.getElementById('nothing').style.display = "none"
+}
+
 let getter = {}
 
 for (i=0;i<productArray.length;i++)
@@ -29,7 +37,6 @@ for (i=0;i<productArray.length;i++)
     const td4 = document.createElement('td')
     const td5 = document.createElement('td')
     const td6 = document.createElement('td')
-  //  const td7 = document.createElement('td')
 
     const img = document.createElement('img')
     img.setAttribute('id', 'for-img')
@@ -44,8 +51,18 @@ for (i=0;i<productArray.length;i++)
     td3.innerHTML = getter.desc
     td4.innerHTML = getter.category
     td5.innerHTML = getter.quantity
+    //Color label of quantity
+    if (Number(getter.quantity) == 0) {
+      td5.style.color = "red"
+    }
+    else if (Number(getter.quantity) > 0 && getter.quantity <= 20) {
+      td5.style.color = "orange"
+    }
+    else {
+      td5.style.color = "green"
+    }
+
     td6.innerHTML = getter.price
-    //td7.appendChild(trash)
 
     tr.appendChild(td1)
     tr.appendChild(td2)
@@ -56,7 +73,6 @@ for (i=0;i<productArray.length;i++)
     //tr.appendChild(td7)
 
     tbody.appendChild(tr) 
-
 
 }
 

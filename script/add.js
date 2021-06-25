@@ -70,6 +70,8 @@ productArray.push(item)
             localStorage.setItem('item'+[i], JSON.stringify(productArray[i]))
         }
     }
+
+    alert("Item added successfully")
 window.location.href = "view.html"
 return false;
     

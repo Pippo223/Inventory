@@ -13,6 +13,14 @@ if (localStorage.getItem('item0') == null)
    }
 }
 
+if (productArray.length == 0 && localStorage.length == 0)
+{
+  document.getElementById('nothing').style.display = "block"
+}
+else {
+    document.getElementById('nothing').style.display = "none"
+}
+
 let getter = {}
 let edit = []
 
@@ -49,8 +57,19 @@ for (i=0;i<productArray.length;i++)
     td3.innerHTML = getter.desc
     td4.innerHTML = getter.category
     td5.innerHTML = getter.quantity
+    //Color label of quantity
+    if (Number(getter.quantity) == 0) {
+        td5.style.color = "red"
+      }
+      else if (Number(getter.quantity) > 0 && getter.quantity <= 20) {
+        td5.style.color = "orange"
+      }
+      else {
+        td5.style.color = "green"
+      }
     td6.innerHTML = getter.price
     td7.appendChild(edit[i])
+    td7.style.color = "blue"
 
     tr.appendChild(td1)
     tr.appendChild(td2)
@@ -275,6 +294,7 @@ for (i=0;i<productArray.length;i++) {
         localStorage.setItem('item'+[i], JSON.stringify(productArray[i]))
         
     }
+    alert("Update successful")
     location.href = "view.html"
     return false
    }

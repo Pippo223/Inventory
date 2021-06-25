@@ -13,6 +13,14 @@ if (localStorage.getItem('item0') == null)
    }
 }
 
+if (productArray.length == 0 && localStorage.length == 0)
+{
+  document.getElementById('nothing').style.display = "block"
+}
+else {
+    document.getElementById('nothing').style.display = "none"
+}
+
 let getter = {}
 let trash = []
 
@@ -50,6 +58,17 @@ for (i=0;i<productArray.length;i++)
     td3.innerHTML = getter.desc
     td4.innerHTML = getter.category
     td5.innerHTML = getter.quantity
+//Color label of quantity
+if (Number(getter.quantity) == 0) {
+    td5.style.color = "red"
+  }
+  else if (Number(getter.quantity) > 0 && getter.quantity <= 20) {
+    td5.style.color = "orange"
+  }
+  else {
+    td5.style.color = "green"
+  }
+
     td6.innerHTML = getter.price
     td7.appendChild(trash[i])
 
@@ -62,26 +81,63 @@ for (i=0;i<productArray.length;i++)
     tr.appendChild(td7)
 
     tbody.appendChild(tr) 
-
-
 }
 
-trash.forEach(deleteAndPush) 
-function deleteAndPush(it,index) {
+// Init the delete confirmation box
+const confirm = document.getElementById("confirm-delete")
+
+// Get the button (icon) that opens the delete confirmation box
+const btn = document.getElementById("delete-icon")
+
+// Get the <span> element that closes the delete confirmation box
+const span = document.getElementsByClassName("close2")[0]
+
+//Get 'Yes' button after opening the delete confirmation box
+let yes = document.getElementById("yes")
+let tracker = 0
+//Get 'No' button after opening the delete confirmation box
+const no = document.getElementById("no")
+
+trash.forEach(displayModal) 
+//yes.forEach(deleteAndPush)
+
+function displayModal(it,index) {
     trash[index].onclick = () => {
+        confirm.style.display = "block"
+        console.log(index)
+        tracker = index
+    }
 
-        localStorage.removeItem('item'+[index])
+    yes.onclick = () => {
+        console.log("yes "+ tracker)
+        localStorage.removeItem('item'+tracker)
+        console.log("deleted item "+tracker)
         const lsl = localStorage.length
-
-        for(i=index;i<lsl-index;i++)
+    
+        for(i=tracker;i<=lsl-tracker;i++)
     {        
         let getNextItem = JSON.parse(localStorage.getItem('item'+[i+1]))
-         localStorage.setItem('item'+[i],JSON.stringify(getNextItem))  
+        console.log("next got")
+         localStorage.setItem('item'+i, JSON.stringify(getNextItem))  
+         console.log("moved item "+i+1 +"to item "+i)
          localStorage.removeItem('item'+[i+1])
     }
         location.reload()
+    }
+
+        span.onclick = function() {
+            confirm.style.display = "none"
+          }
+
+no.onclick = function() {
+    confirm.style.display = "none"
 }
+
 }
+
+// function deleteAndPush(it,index) {
+
+// }
 
 
 
