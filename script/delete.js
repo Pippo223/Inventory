@@ -82,7 +82,7 @@ if (Number(getter.quantity) == 0) {
 
     tbody.appendChild(tr) 
 }
-
+console.log(localStorage.length)
 // Init the delete confirmation box
 const confirm = document.getElementById("confirm-delete")
 
@@ -98,10 +98,9 @@ let tracker = 0
 //Get 'No' button after opening the delete confirmation box
 const no = document.getElementById("no")
 
-trash.forEach(displayModal) 
-//yes.forEach(deleteAndPush)
+trash.forEach(displayModalAndDelete) 
 
-function displayModal(it,index) {
+function displayModalAndDelete(it,index) {
     trash[index].onclick = () => {
         confirm.style.display = "block"
         console.log(index)
@@ -113,13 +112,13 @@ function displayModal(it,index) {
         localStorage.removeItem('item'+tracker)
         console.log("deleted item "+tracker)
         const lsl = localStorage.length
-    
-        for(i=tracker;i<=lsl-tracker;i++)
-    {        
+
+        for(i = tracker;i < lsl; i++)
+        {        
         let getNextItem = JSON.parse(localStorage.getItem('item'+[i+1]))
         console.log("next got")
          localStorage.setItem('item'+i, JSON.stringify(getNextItem))  
-         console.log("moved item "+i+1 +"to item "+i)
+         console.log("moved item "+[i+1] +"to item "+i)
          localStorage.removeItem('item'+[i+1])
     }
         location.reload()
@@ -134,10 +133,6 @@ no.onclick = function() {
 }
 
 }
-
-// function deleteAndPush(it,index) {
-
-// }
 
 
 

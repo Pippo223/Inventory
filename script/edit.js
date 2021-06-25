@@ -154,8 +154,6 @@ let editMsg = document.createElement('i')
     
     const tdGetter = getIndexRow[index+1]
 
-   // console.log(productArray[index])
-
     //Edit the table data 
     edit[index].addEventListener ('click', editTableData) 
     
@@ -166,9 +164,7 @@ let editMsg = document.createElement('i')
      
        tdGetter.addEventListener('click', getterFunction) 
 
-       function getterFunction (e) {
-        
-           
+       function getterFunction (e) {   
         if (e.target == tdGetter.children[0].children[0])
         {
             tdGetter.children[0].children[0].replaceWith(td0)

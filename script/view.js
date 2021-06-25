@@ -25,7 +25,7 @@ else {
 let getter = {}
 
 for (i=0;i<productArray.length;i++)
-// for ( let i of productArray)
+// for (i of productArray)
 {    
     getter = productArray[i]   
     

@@ -137,12 +137,14 @@ a:hover {
     font-size: 1.5rem;
 }
 
+
+
 .inner {
     display: inline-block;
-    position:absolute;
+     position:absolute; 
     left: 13rem;
     bottom: 0.25em;
-    font-size: 10rem;
+    font-size:10rem;
     color:rgba(0, 0, 0, 0.2); 
     
 }
@@ -392,3 +394,61 @@ button[id = update-ls]:hover{
         background-color: red; 
     }
 
+@media (max-width:1250px) {
+    .inner {
+        left:10rem;
+        font-size: 7rem;
+    }
+    #preview-pane {
+        display: none;
+    }
+}
+@media (max-width:1000px) {
+    .inner {
+        left:7rem;
+        font-size: 5rem;
+        bottom:5rem
+    }
+}
+@media (max-width:800px) {
+.form {
+   width:20em;
+    margin-left: 0;
+}
+}
+
+@media (max-width:700px) {
+    .inner {
+        left:5rem;
+        font-size: 3rem;
+        bottom:9rem
+    }
+}
+
+@media (max-width:565px) {
+    .inner {
+        left:2rem;
+        font-size: 3rem;
+        bottom:2rem
+    }
+
+    .boxes p:first-child {
+        font-size: 2rem;
+    }
+    .boxes p:nth-child(2) {
+        font-size: 1rem;
+    }
+
+    .top:first-child{
+        font-size: 1rem;
+    }
+    .top:nth-child(4) {
+         font-size: 1.1rem;
+    }
+    .top:nth-child(3) {
+        font-size: 0.9rem;
+    }
+    ul, li  {
+        font-size: 0.8rem;
+    }
+}

@@ -17,6 +17,7 @@ const item = {
     imageUrl:''
  }
 
+ //Get Items from local storage into product array
  let productArray = []
 
  if (localStorage.getItem('item0') == null) 
@@ -31,6 +32,7 @@ const item = {
     }
  }
 
+ //convert image into base 64 string for storage
 upload.addEventListener('change', () => {
 
     const file = upload.files[0];
@@ -44,6 +46,7 @@ upload.addEventListener('change', () => {
      reader.readAsDataURL(file);
   })
 
+//Add/push products as an object into the array
   addBtn.onclick = () => {
     
         item.name = itemName.value
@@ -52,17 +55,15 @@ upload.addEventListener('change', () => {
         item.quantity=qty.value
         item.price=price.value
     
- 
- //console.log("imgUrl: " + JSON.stringify(item.imagUrl))
-
  if(item.name === "" || item.desc === "" ||item.category === ""
     ||item.quantity === "" || item.price === "")
     {
         alert("All fields are required")
         return
     }
-//console.log("item: "+JSON.stringify(item, null, 4))
 productArray.push(item)
+
+//send the products back into local storage from the array
     for (i=0;i<productArray.length;i++)
     {
         if (localStorage.getItem('item'+[i]) == null)

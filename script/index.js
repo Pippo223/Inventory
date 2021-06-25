@@ -43,8 +43,6 @@ let productArray = []
  }
 
     console.log("out "+ outOfStock);
-//    console.log("out "+ almostOut);
-//    console.log("out "+ inStock);
 
 //print these categorizations to screen
 let getIn = document.getElementById('inStock') 
